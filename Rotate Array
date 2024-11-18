@@ -1,0 +1,22 @@
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+void rotateArr(vector<int>& arr, int d) {
+    int n = arr.size(); // Get the size of the array
+
+    // Handle cases where d >= n to avoid unnecessary rotations
+    d = d % n;
+
+    // Reverse the first 'd' elements
+    reverse(arr.begin(), arr.begin() + d);
+    // Now, the first 'd' elements are reversed.
+
+    // Reverse the remaining 'n-d' elements
+    reverse(arr.begin() + d, arr.end());
+    // Now, the elements after the first 'd' are reversed.
+
+    // Reverse the entire array to achieve the final rotated order
+    reverse(arr.begin(), arr.end());
+    // Now, the array is rotated by 'd' positions to the left.
+}
