@@ -22,6 +22,4 @@ void nextPermutation(vector<int>& arr) {
     }
     
      reverse(arr.begin() + pivot + 1, arr.end());
-     
-     
     }
