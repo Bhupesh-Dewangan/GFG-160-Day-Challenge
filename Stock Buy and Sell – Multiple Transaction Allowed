@@ -7,6 +7,5 @@ int maximumProfit(vector<int> &prices) {
         if (prices[i] > prices[i - 1]) 
             res += prices[i] - prices[i - 1];
     }
-    
     return res;
     }
