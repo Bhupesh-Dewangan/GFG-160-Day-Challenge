@@ -19,5 +19,4 @@ int getMinDiff(vector<int> &arr, int k) {
         // Update the result with the minimum difference
         result = min(result, max_height - min_height);
     }
-
     return result;
