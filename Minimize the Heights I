@@ -8,6 +8,4 @@ int getMinDiff(int k, vector<int> &arr) {
             diff = min(diff, x - y); 
     }
     return diff;
-
-
     }
