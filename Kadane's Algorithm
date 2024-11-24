@@ -1,0 +1,11 @@
+int maxSubarraySum(vector<int> &arr) {
+        int ans = arr[0];
+        int MaxEnding = arr[0];
+        
+        for(int i=1; i<arr.size(); i++){
+            MaxEnding = max(MaxEnding + arr[i], arr[i]);
+            ans = max(ans, MaxEnding);
+        }
+        
+        return ans;
+    }
