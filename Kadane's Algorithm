@@ -6,6 +6,5 @@ int maxSubarraySum(vector<int> &arr) {
             MaxEnding = max(MaxEnding + arr[i], arr[i]);
             ans = max(ans, MaxEnding);
         }
-        
         return ans;
     }
