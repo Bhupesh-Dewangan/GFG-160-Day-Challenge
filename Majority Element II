@@ -26,5 +26,4 @@ vector<int> findMajority(vector<int>& arr) {
             swap(res[0], res[1]);
 
         return res;
-
     }
