@@ -15,6 +15,4 @@ int missingNumber(vector<int> &arr) {
         
         return n+1;
 
-
-
     }
