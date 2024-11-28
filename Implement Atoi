@@ -23,7 +23,5 @@ int myAtoi(char *s) {
         // Append current digit to the result
         res = 10 * res + (s[idx++] - '0');
     }
-
-
     return res * sign;
     }
