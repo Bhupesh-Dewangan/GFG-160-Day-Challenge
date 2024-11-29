@@ -5,6 +5,7 @@ string trimLeadingZeros(const string &s) {
     return (firstOne == string::npos) ? "0" : s.substr(firstOne);
 }
 
+
 // This function adds two binary strings and return
 // result as a third string
 string addBinary(string &s1, string &s2) {
