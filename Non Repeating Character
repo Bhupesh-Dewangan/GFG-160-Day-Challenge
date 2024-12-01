@@ -1,3 +1,5 @@
+const int MAX_CHAR = 26;
+
 char nonRepeatingChar(string &s) {
         vector<int> vis(MAX_CHAR, -1);
 
