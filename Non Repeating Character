@@ -28,4 +28,5 @@ char nonRepeatingChar(string &s) {
     // If non-repeating character is found, return it 
     // Else return '$'
     return (idx == INT_MAX ? '$' : s[idx]);
+
     }
