@@ -36,6 +36,7 @@ void constructLps(string &pat, vector<int> &lps) {
 }
 
 
+
     vector<int> search(string& pat, string& txt) {
         int n = txt.length();
     int m = pat.length();
