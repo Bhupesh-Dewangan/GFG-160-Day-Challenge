@@ -37,6 +37,8 @@ vector<int> computeLPSArray(string &pat) {
     return lps;
 }
 
+--------------------------------------------------------------------------------
+
 // Method returns minimum character to be added at
 // front to make string palindrome
 int minChar(string &s) {
@@ -54,4 +56,5 @@ int minChar(string &s) {
     // By subtracting last entry of lps vector from
     // string length, we will get our result
     return (n - lps.back());
+
 }
