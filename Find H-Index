@@ -1,4 +1,5 @@
 int hIndex(vector<int>& citations) {
+
         int n = citations.size();
         vector<int> freq(n + 1);
 
