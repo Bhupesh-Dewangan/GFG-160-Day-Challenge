@@ -15,6 +15,7 @@ bool check(vector<int> &stalls, int k, int dist) {
 
     // Return true if we are able to place all 'k' cows
     return (cnt >= k);
+
 }
 
     int aggressiveCows(vector<int> &stalls, int k) {
