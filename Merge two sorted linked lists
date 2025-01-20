@@ -1,1 +1,29 @@
+Node* sortedMerge(Node* head1, Node* head2) {
+    // Dummy node to act as the start of the merged list
+    Node* dummy = new Node(0);
+    Node* tail = dummy; // Pointer to form the new list
 
+    // Traverse both lists
+    while (head1 != nullptr && head2 != nullptr) {
+        if (head1->data <= head2->data) {
+            tail->next = head1;
+            head1 = head1->next;
+        } else {
+            tail->next = head2;
+            head2 = head2->next;
+        }
+        tail = tail->next; // Move the tail
+    }
+
+    // Attach the remaining elements from either list
+    if (head1 != nullptr) {
+        tail->next = head1;
+    } else {
+        tail->next = head2;
+    }
+
+    // The merged list starts after the dummy node
+    Node* mergedHead = dummy->next;
+    delete dummy; // Free the dummy node memory
+    return mergedHead;
+}
