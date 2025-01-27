@@ -16,6 +16,7 @@ string addBinary(string &s1, string &s2) {
   
     int n = s1.size();  
     int m = s2.size(); 
+
     
     // swap the strings if s1 is of smaller length
     if (n < m) {
