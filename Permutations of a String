@@ -1,0 +1,42 @@
+// Function genPermutation is used to generate all possible permutaion.
+void genPermutation(int i, string &s, vector<bool> &used, 
+                    string &curr, unordered_set<string>& st) {
+    if (i == s.size()) {
+
+        // Add the permutation to the result set
+        st.insert(curr);
+        return;
+    }
+
+    for (int j = 0; j < s.size(); j++) {
+        if (!used[j]) {
+
+            // Mark the character as used
+            used[j] = true;
+              curr.push_back(s[j]);
+            
+            // Recurse with the next character
+            genPermutation(i + 1, s, used, curr,st);
+              
+            // Backtrack and unmark the character
+              used[j] = false;
+              curr.pop_back();
+        }
+    }
+}
+
+vector<string> findPermutation(string &s) {
+
+    // To track if a character is used
+    vector<bool> used(s.size(), false);
+    unordered_set<string> st;
+  
+      string curr = "";
+
+    // Start the recursion
+    genPermutation(0, s, used, curr, st);
+
+    // Convert the set to a vector
+    vector<string> res(st.begin(), st.end());
+    return res;
+}
