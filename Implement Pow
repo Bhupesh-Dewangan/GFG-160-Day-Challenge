@@ -1,0 +1,3 @@
+double power(double b, int e) {  
+    return pow(b, e);
+}
