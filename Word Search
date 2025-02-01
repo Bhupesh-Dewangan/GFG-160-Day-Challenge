@@ -1,0 +1,41 @@
+    // Helper function to perform Depth-First Search (DFS) to check if the word exists
+    bool dfs(vector<vector<char>>& mat, string& word, int i, int j, int index) {
+        // If the entire word is found, return true
+        if (index == word.size()) return true; 
+        
+        // Check for out-of-bounds or character mismatch
+        if (i < 0 || j < 0 || i >= mat.size() || j >= mat[0].size() || mat[i][j] != word[index]) 
+            return false;
+
+        // Temporarily mark the current cell as visited to avoid revisiting
+        char temp = mat[i][j];
+        mat[i][j] = '#';
+
+        // Explore all four possible directions (up, down, left, right)
+        bool found = dfs(mat, word, i + 1, j, index + 1) ||  // Down
+                     dfs(mat, word, i - 1, j, index + 1) ||  // Up
+                     dfs(mat, word, i, j + 1, index + 1) ||  // Right
+                     dfs(mat, word, i, j - 1, index + 1);    // Left
+
+        // Restore the original character (backtracking)
+        mat[i][j] = temp; 
+        
+        return found;
+    }
+
+    // Function to check if the given word exists in the character matrix
+    bool isWordExist(vector<vector<char>>& mat, string& word) {
+        int rows = mat.size(), cols = mat[0].size();
+
+        // Iterate through each cell in the matrix
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                // If the first character of the word matches, start DFS
+                if (mat[i][j] == word[0] && dfs(mat, word, i, j, 0)) 
+                    return true;
+            }
+        }
+        
+        // If no valid path is found, return false
+        return false;
+    }
