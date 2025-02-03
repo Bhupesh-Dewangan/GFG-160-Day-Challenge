@@ -1,0 +1,13 @@
+// Returns height which is the number of edges
+// along the longest path from the root node down 
+// to the farthest leaf node.
+int height(Node *root) {
+    if (root == nullptr)
+        return -1;
+
+    // compute the height of left and right subtrees
+    int lHeight = height(root->left);
+    int rHeight = height(root->right);
+
+    return max(lHeight, rHeight) + 1;
+}
