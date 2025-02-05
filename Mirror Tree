@@ -1,0 +1,36 @@
+// function to return the root of inverted tree
+void mirror(Node* root) {
+    if (root == nullptr)
+        return ;
+    
+    // Invert the left and right subtree
+    mirror(root->left);
+    mirror(root->right);
+  
+    // Swap the left and right subtree
+    swap(root->left, root->right);
+}
+
+// Print tree as level order
+void levelOrder(Node *root) {
+    if (root == nullptr) {
+          cout << "N ";
+          return ;
+    }
+
+    queue<Node*> qq;
+    qq.push(root);
+
+    while (!qq.empty()) {
+        Node *curr = qq.front();
+        qq.pop();
+
+        if (curr == nullptr) {
+            cout << "N ";
+            continue;
+        }
+        cout << (curr->data) <<  " ";
+        qq.push(curr->left);
+        qq.push(curr->right);
+    }
+}
