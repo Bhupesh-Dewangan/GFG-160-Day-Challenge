@@ -1,0 +1,37 @@
+private:
+    stack<int> mainStack;
+    stack<int> minStack;
+  public:
+    Solution() {
+        // code here
+    }
+
+    // Add an element to the top of Stack
+    void push(int x) {
+        mainStack.push(x);
+        if(minStack.empty() || x <= minStack.top())
+            minStack.push(x);
+        else
+            minStack.push(minStack.top());
+    }
+
+    // Remove the top element from the Stack
+    void pop() {
+        if(!minStack.empty()){
+            mainStack.pop();
+            minStack.pop();
+        }
+    }
+
+    // Returns top element of the Stack
+    int peek() {
+        if(minStack.empty()) return -1;
+        return mainStack.top();
+    }
+
+    // Finds minimum element of Stack
+    int getMin() {
+        // code here
+        if(minStack.empty()) return -1;
+        return minStack.top();
+    }
